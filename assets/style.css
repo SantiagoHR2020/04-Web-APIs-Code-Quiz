@@ -1,0 +1,51 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container{
+    width: 800px;
+    max-width: 80%;
+    background-color: cornflowerblue;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow:0 0 10px 2px ;
+}
+
+.btn-layout{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin: 15px 0;
+    gap: 10px;
+}
+
+.btn {
+    background-color: gray;
+
+}
+
+.btn.correct {
+    background-color: green;
+    
+}
+
+.btn.wrong {
+    background-color: red;
+    
+}
+
+.hide{
+    display: none;
+}
