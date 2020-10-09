@@ -1,12 +1,19 @@
 var startBtn = document.querySelector("#start-btn");
 var quizScreen = document.querySelector("#quiz-screen");
-
-startBtn.addEventListener("click", startGame);
+var results = document.querySelector("#results");
+var submitBtn = document.querySelector("#submit-btn");
+var scoreBoard = document.querySelector("#scoreBoard");
+var initialForm = document.querySelector("#initialForm");
 
 var timerId;
 var Q = 0;
 var time = 25;
 var score =0;
+
+
+startBtn.addEventListener("click", startGame);
+submitBtn.addEventListener("click", storeInitial);
+
 
 function startGame() {
   var startScreen = document.getElementById("start-screen");
@@ -64,6 +71,7 @@ function selectAnswer() {
 function endGame() {
   quizScreen.setAttribute("class", "hide");
   clearInterval(timerID);
+  results.classList.remove("hide");
 }
 
 function runClock() {
@@ -75,6 +83,12 @@ function runClock() {
   if (time <= 0) {
     setTimeout(endGame, 500);
   }
+}
+
+function storeInitial(e){
+  e.preventDefault();
+  scoreBoard.classList.remove("hide");
+  initialForm.classList.add("hide");
 }
 
 var questionArray = [
