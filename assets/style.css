@@ -32,6 +32,14 @@ body{
     gap: 10px;
 }
 
+.results-layout{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    gap: 10px;
+}
+
 .btn-layout{
     display: grid;
     grid-template-columns: repeat(2, auto);

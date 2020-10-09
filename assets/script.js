@@ -5,7 +5,7 @@ startBtn.addEventListener("click", startGame);
 
 var timerId;
 var Q = 0;
-var time = 100;
+var time = 25;
 var score =0;
 
 function startGame() {
