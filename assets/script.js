@@ -4,6 +4,7 @@ var results = document.querySelector("#results");
 var submitBtn = document.querySelector("#submit-btn");
 var scoreBoard = document.querySelector("#scoreBoard");
 var initialForm = document.querySelector("#initialForm");
+var initialF = document.querySelector("#initial")
 
 var timerId;
 var Q = 0;
@@ -50,14 +51,14 @@ function selectAnswer() {
 
   if (this.value !== questionArray[Q].answer) {
     console.log("wrong");
-    time -= 4;
+    time -= 10;
     this.classList.add("wrong");
 
     console.log(this);
   } else {
     this.classList.add("correct");
     console.log("right");
-    time += 4;
+    time += 10;
     score++
   }
   Q++;
@@ -87,6 +88,11 @@ function runClock() {
 
 function storeInitial(e){
   e.preventDefault();
+
+
+
+
+
   scoreBoard.classList.remove("hide");
   initialForm.classList.add("hide");
 }
