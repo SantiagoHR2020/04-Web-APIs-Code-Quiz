@@ -88,10 +88,13 @@ function runClock() {
 
 function storeInitial(e){
   e.preventDefault();
+  var initialSt = initialF.value.trim(); 
+  console.log(initialSt);
+  console.log(score);
 
-
-
-
+  var initOb = {initialSt, score};
+  console.log(initOb);
+  localStorage.setItem("initOb", JSON.stringify(initOb));
 
   scoreBoard.classList.remove("hide");
   initialForm.classList.add("hide");
@@ -101,7 +104,7 @@ var questionArray = [
   {
     question: "Is it possible to nest functions in JavaScript? ",
     choices: ["True", "False"],
-    answer: "True",
+    answer: "True"
   },
   {
     question: "Which of the following is true? ",
@@ -111,7 +114,7 @@ var questionArray = [
       " If onKeyDown returns false, the key-up event is cancelled.",
       "If onKeyPress returns false, the key-up event is canceled.",
     ],
-    answer: "If onKeyDown returns false, the key-press event is cancelled.",
+    answer: "If onKeyDown returns false, the key-press event is cancelled."
   },
   {
     question: "Scripting language are",
@@ -120,7 +123,7 @@ var questionArray = [
       "Assembly Level programming language",
       "Machine level programming language",
     ],
-    answer: "High Level Programming language",
+    answer: "High Level Programming language"
   },
   {
     question: "Which best explains getSelection()?",
@@ -130,11 +133,11 @@ var questionArray = [
       "Returns the value of cursor-selected text",
       "Returns the VALUE of a checked radio input.",
     ],
-    answer: "Returns the value of cursor-selected text",
+    answer: "Returns the value of cursor-selected text"
   },
   {
     question: "Are java and javascript the same?",
     choices: ["NO", "YES"],
-    answer: "NO",
+    answer: "NO"
   },
 ];
