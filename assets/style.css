@@ -36,12 +36,12 @@ body{
 
 }
 
-.btn.correct {
+.correct {
     background-color: green;
     
 }
 
-.btn.wrong {
+.wrong {
     background-color: red;
     
 }
