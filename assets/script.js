@@ -48,14 +48,14 @@ function selectAnswer() {
 
     console.log(this);
   } else {
-    this.classList.add("right");
+    this.classList.add("correct");
     console.log("right");
     time += 4;
     score++
   }
   Q++;
   if (Q === questionArray.length) {
-    endGame();
+    setTimeout(endGame, 500);
   } else {
     setTimeout(buildQuestion, 500);
   }
@@ -73,7 +73,7 @@ function runClock() {
 
   console.log(time);
   if (time <= 0) {
-    endGame();
+    setTimeout(endGame, 500);
   }
 }
 
