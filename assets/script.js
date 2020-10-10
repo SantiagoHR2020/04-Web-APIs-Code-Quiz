@@ -1,3 +1,5 @@
+// Global Variables
+
 var startBtn = document.querySelector("#start-btn");
 var quizScreen = document.querySelector("#quiz-screen");
 var results = document.querySelector("#results");
@@ -7,9 +9,7 @@ var initialForm = document.querySelector("#initialForm");
 var initialF = document.querySelector("#initial");
 var scoreboardDisplay = document.querySelector("#scoreboardDisplay");
 var restartBtn = document.querySelector("#restart-btn");
-var startScreen = document.getElementById("start-screen");
-
-// Global Varibles
+var startScreen = document.querySelector("#start-screen");
 
 var timerId;
 var Q = 0;
@@ -17,7 +17,7 @@ var time = 25;
 var score = 0;
 var highScore = [];
 
-// Event Listners
+// Event Listeners
 
 startBtn.addEventListener("click", startGame);
 submitBtn.addEventListener("click", storeInitial);
@@ -33,7 +33,7 @@ function startGame() {
   timerID = setInterval(runClock, 1000);
 }
 
-// Fuction to build the questions
+// Function to build the questions
 
 function buildQuestion() {
   var questionEl = document.getElementById("question");
@@ -102,7 +102,7 @@ function runClock() {
   }
 }
 
-// fuction to create and store the high score
+// function to create and store the high score
 
 function storeInitial(e) {
   e.preventDefault();
@@ -113,8 +113,14 @@ function storeInitial(e) {
   var initOb = { initialSt, score };
   console.log(initOb);
   highScore.push(initOb);
+
+  highScore.sort((a, b) => {
+    return b.score - a.score;
+  })
+
   localStorage.setItem("initOb", JSON.stringify(highScore));
   highScore = JSON.parse(localStorage.getItem("initOb"));
+
 
   var output = "";
   for (var i = 0; i < highScore.length; i++) {
@@ -132,6 +138,8 @@ function restart() {
   Q = 0;
   time = 25;
   score = 0;
+  scoreBoard.classList.add("hide");
+  initialForm.classList.remove("hide");
   results.classList.add("hide");
   startScreen.classList.remove("hide");
   initialForm.classList.remove("hide");
