@@ -1,3 +1,5 @@
+/* Defaults */
+
 *, *::before, *::after{
     box-sizing: border-box;
     font-weight: bold
@@ -13,9 +15,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
-
-
 .container{
     width: 800px;
     max-width: 80%;
@@ -69,6 +68,8 @@ body{
     border-color: rgb(167, 192, 26);
     border-style: double;
 }
+
+/* applied classes */
 
 .correct {
     background-color: rgb(6, 138, 6);

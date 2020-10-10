@@ -4,29 +4,36 @@ var results = document.querySelector("#results");
 var submitBtn = document.querySelector("#submit-btn");
 var scoreBoard = document.querySelector("#scoreBoard");
 var initialForm = document.querySelector("#initialForm");
-var initialF = document.querySelector("#initial")
+var initialF = document.querySelector("#initial");
 var scoreboardDisplay = document.querySelector("#scoreboardDisplay");
 var restartBtn = document.querySelector("#restart-btn");
 var startScreen = document.getElementById("start-screen");
 
+// Global Varibles
+
 var timerId;
 var Q = 0;
 var time = 25;
-var score =0;
-var highScore =[];
+var score = 0;
+var highScore = [];
+
+// Event Listners
 
 startBtn.addEventListener("click", startGame);
 submitBtn.addEventListener("click", storeInitial);
 restartBtn.addEventListener("click", restart);
 
+// Function to start the quiz
+
 function startGame() {
-  
   startScreen.classList.add("hide");
   quizScreen.classList.remove("hide");
   buildQuestion();
 
   timerID = setInterval(runClock, 1000);
 }
+
+// Fuction to build the questions
 
 function buildQuestion() {
   var questionEl = document.getElementById("question");
@@ -49,6 +56,8 @@ function buildQuestion() {
   });
 }
 
+// Function to check for the correct answer
+
 function selectAnswer() {
   console.log(this.value);
 
@@ -62,7 +71,7 @@ function selectAnswer() {
     this.classList.add("correct");
     console.log("right");
     time += 10;
-    score++
+    score++;
   }
   Q++;
   if (Q === questionArray.length) {
@@ -72,11 +81,15 @@ function selectAnswer() {
   }
 }
 
+// Function to end the quiz
+
 function endGame() {
   quizScreen.setAttribute("class", "hide");
   clearInterval(timerID);
   results.classList.remove("hide");
 }
+
+// Timer Function
 
 function runClock() {
   time--;
@@ -89,44 +102,48 @@ function runClock() {
   }
 }
 
-function storeInitial(e){
+// fuction to create and store the high score
+
+function storeInitial(e) {
   e.preventDefault();
-  var initialSt = initialF.value.trim(); 
+  var initialSt = initialF.value.trim();
   console.log(initialSt);
   console.log(score);
 
-  var initOb = {initialSt, score};
+  var initOb = { initialSt, score };
   console.log(initOb);
-  highScore.push(initOb)
+  highScore.push(initOb);
   localStorage.setItem("initOb", JSON.stringify(highScore));
   highScore = JSON.parse(localStorage.getItem("initOb"));
 
   var output = "";
-  for(var i  = 0; i<highScore.length; i++){
-    output += highScore[i].initialSt + " " + highScore[i].score +"<br>"; 
-
+  for (var i = 0; i < highScore.length; i++) {
+    output += highScore[i].initialSt + " " + highScore[i].score + "<br>";
   }
-  scoreboardDisplay.innerHTML = output
-
+  scoreboardDisplay.innerHTML = output;
 
   scoreBoard.classList.remove("hide");
   initialForm.classList.add("hide");
 }
 
-function restart(){
+//Function restart the quiz
+
+function restart() {
   Q = 0;
   time = 25;
-  score =0;
-  results.classList.add("hide")
-  startScreen.classList.remove("hide")
+  score = 0;
+  results.classList.add("hide");
+  startScreen.classList.remove("hide");
   initialForm.classList.remove("hide");
 }
+
+// array of objects the question and answers
 
 var questionArray = [
   {
     question: "Is it possible to nest functions in JavaScript? ",
     choices: ["True", "False"],
-    answer: "True"
+    answer: "True",
   },
   {
     question: "Which of the following is true? ",
@@ -136,7 +153,7 @@ var questionArray = [
       " If onKeyDown returns false, the key-up event is cancelled.",
       "If onKeyPress returns false, the key-up event is canceled.",
     ],
-    answer: "If onKeyDown returns false, the key-press event is cancelled."
+    answer: "If onKeyDown returns false, the key-press event is cancelled.",
   },
   {
     question: "Scripting language are",
@@ -145,7 +162,7 @@ var questionArray = [
       "Assembly Level programming language",
       "Machine level programming language",
     ],
-    answer: "High Level Programming language"
+    answer: "High Level Programming language",
   },
   {
     question: "Which best explains getSelection()?",
@@ -155,11 +172,11 @@ var questionArray = [
       "Returns the value of cursor-selected text",
       "Returns the VALUE of a checked radio input.",
     ],
-    answer: "Returns the value of cursor-selected text"
+    answer: "Returns the value of cursor-selected text",
   },
   {
     question: "Are java and javascript the same?",
     choices: ["NO", "YES"],
-    answer: "NO"
+    answer: "NO",
   },
 ];

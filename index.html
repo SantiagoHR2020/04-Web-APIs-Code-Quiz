@@ -10,29 +10,36 @@
   </head>
   <body>
     <div class="container">
+      <!-- The start of the quiz -->
+
       <div id="start-screen" class="start-layout">
         <h1 class="title">The JavaScript Quiz</h1>
         <button id="start-btn" class="btn">Start</button>
       </div>
+
+      <!-- The quiz section -->
+
       <div class="hide" id="quiz-screen">
         <h3 id="timer">Timer</h3>
         <div id="question">Question</div>
         <div id="answers" class="btn-layout"></div>
       </div>
+
+      <!-- The results and hight score -->
+
       <div class="results-layout hide" id="results">
         <div>
           <form action="submit" id="initialForm" class="">
             <label for="initial">Enter your initial: </label>
-            <input type="text" id="initial">
+            <input type="text" id="initial" />
             <button class="btn" id="submit-btn">Submit</button>
           </form>
-          <div id="scoreBoard" class="hide ">
+          <div id="scoreBoard" class="hide">
             <h1>Scores</h1>
             <div class="scoreDiv">
-            <p id="scoreboardDisplay"></p>
+              <p id="scoreboardDisplay"></p>
             </div>
             <button class="btn" id="restart-btn">Restart</button>
-            
           </div>
         </div>
       </div>
