@@ -5,21 +5,24 @@ var submitBtn = document.querySelector("#submit-btn");
 var scoreBoard = document.querySelector("#scoreBoard");
 var initialForm = document.querySelector("#initialForm");
 var initialF = document.querySelector("#initial")
+var scoreboardDisplay = document.querySelector("#scoreboardDisplay");
+var restartBtn = document.querySelector("#restart-btn");
+var startScreen = document.getElementById("start-screen");
 
 var timerId;
 var Q = 0;
 var time = 25;
 var score =0;
-
+var highScore =[];
 
 startBtn.addEventListener("click", startGame);
 submitBtn.addEventListener("click", storeInitial);
-
+restartBtn.addEventListener("click", restart);
 
 function startGame() {
-  var startScreen = document.getElementById("start-screen");
-  startScreen.setAttribute("class", "hide");
-  quizScreen.removeAttribute("class", "hide");
+  
+  startScreen.classList.add("hide");
+  quizScreen.classList.remove("hide");
   buildQuestion();
 
   timerID = setInterval(runClock, 1000);
@@ -94,10 +97,29 @@ function storeInitial(e){
 
   var initOb = {initialSt, score};
   console.log(initOb);
-  localStorage.setItem("initOb", JSON.stringify(initOb));
+  highScore.push(initOb)
+  localStorage.setItem("initOb", JSON.stringify(highScore));
+  highScore = JSON.parse(localStorage.getItem("initOb"));
+
+  var output = "";
+  for(var i  = 0; i<highScore.length; i++){
+    output += highScore[i].initialSt + " " + highScore[i].score +"<br>"; 
+
+  }
+  scoreboardDisplay.innerHTML = output
+
 
   scoreBoard.classList.remove("hide");
   initialForm.classList.add("hide");
+}
+
+function restart(){
+  Q = 0;
+  time = 25;
+  score =0;
+  results.classList.add("hide")
+  startScreen.classList.remove("hide")
+  initialForm.classList.remove("hide");
 }
 
 var questionArray = [

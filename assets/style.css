@@ -1,6 +1,7 @@
 *, *::before, *::after{
     box-sizing: border-box;
-
+    font-weight: bold
+    ;
 }
 
 body{
@@ -40,6 +41,15 @@ body{
     gap: 10px;
 }
 
+.scoreDiv{
+    background-color: rgb(240, 235, 235);
+    border-radius: 7px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    gap: 10px;
+}
 .btn-layout{
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -53,6 +63,11 @@ body{
     padding: 10px;
     font-weight: bold;
 
+}
+
+.btn:hover{
+    border-color: rgb(167, 192, 26);
+    border-style: double;
 }
 
 .correct {
