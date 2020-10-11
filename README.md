@@ -6,16 +6,30 @@
 
 # Link to web site
 
-https://santiagohr2020.github.io/03-JavaScript-Password-Generator/
+https://santiagohr2020.github.io/04-Web-APIs-Code-Quiz/
 
 # Layout
 
-The quiz app has a start page, question page, initial page 
+The quiz app has a start page, question page, quiz taker initials page, and high score page. 
 
 # Techonogies used
 
 HTML5, CSS, and JavaScript
 
-# Site Image
+# Site Images
 
-![screenshot of about me page phone image](assets/images/Screenshots/screenshot1.PNG)
+# screenshot of the start page
+
+![screenshot of the start page](assets/images/Screenshots/screenshot1.PNG)
+
+# screenshot of the quiz page
+
+![screenshot of the start page](assets/images/Screenshots/screenshot2.PNG)
+
+# screenshot of the initail page
+
+![screenshot of the start page](assets/images/Screenshots/screenshot3.PNG)
+
+# screenshot of the high score page
+
+![screenshot of the start page](assets/images/Screenshots/screenshot4.PNG)
