@@ -18,18 +18,18 @@ HTML5, CSS, and JavaScript
 
 # Site Images
 
-# screenshot of the start page
+# Screenshot of the start page
 
 ![screenshot of the start page](assets/images/screenshot1.PNG)
 
-# screenshot of the quiz page
+# Screenshot of the quiz page
 
 ![screenshot of the start page](assets/images/screenshot2.PNG)
 
-# screenshot of the initail page
+# Screenshot of the initail page
 
 ![screenshot of the start page](assets/images/screenshot3.PNG)
 
-# screenshot of the high score page
+# Screenshot of the high score page
 
 ![screenshot of the start page](assets/images/screenshot4.PNG)
