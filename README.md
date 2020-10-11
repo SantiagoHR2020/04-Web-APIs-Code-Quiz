@@ -24,7 +24,7 @@ HTML5, CSS, and JavaScript
 
 # screenshot of the quiz page
 
-![screenshot of the start page](assets/images/screenshot2.PNG.PNG)
+![screenshot of the start page](assets/images/screenshot2.PNG)
 
 # screenshot of the initail page
 
